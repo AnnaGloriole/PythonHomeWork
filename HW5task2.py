@@ -15,14 +15,14 @@ def draw_board(board):
 def take_input(player_token):
     valid = False
     while not valid:
-        player_answer = input('Куда поставим' + player_token+"?")
+        player_answer = input('Куда поставим ' + player_token+"?: ")
         try:
             player_answer = int(player_answer)
         except:
             print("it's not correct digit")
             continue
         if player_answer >=1 and player_answer <=9:
-            if (str(board[player_answer-1]) not in "ХО"):
+            if (str(board[player_answer-1]) not in 'ХО'):
                 board[player_answer-1] = player_token
                 valid = True
             else:
